@@ -37,6 +37,48 @@
       text-decoration: none;
       font-weight: bold;
     }
+     .seccion-con-fondo {
+      background-image: url('misterplumberlogo.png.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 450px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    }
+    .contenido-sobre-fondo {
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 2rem 3rem;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+      max-width: 80%;
+      animation: fadeIn 2s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background-color: #25D366;
+      color: white;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.6);
+      transition: background-color 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe5b;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     .hero {
       background: url('plumber-bg.jpg') no-repeat center center/cover;
       height: 70vh;
@@ -137,7 +179,6 @@
     }
   </style>
 </head>
-  <img src="misterplumberlogo.png.jpg" alt="Fontanero en san jose, servicios de fontaneria en costa rica, fugas de agua" class="imagen-grande">
 <body class="clean-background">
   <header>
     <img src="logo-misterplumber.png" alt="Mister Plumber Logo" class="logo">
