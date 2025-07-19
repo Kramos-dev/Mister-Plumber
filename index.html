@@ -47,7 +47,6 @@
   }
   </script>
 
-
   <!-- Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -180,9 +179,7 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:hover { transform: translateY(-5px); }
 
     form {
       display: flex;
@@ -205,9 +202,7 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background: #005588;
-    }
+    button:hover { background: #005588; }
 
     .whatsapp-button {
       position: fixed;
@@ -227,9 +222,7 @@
       z-index: 1000;
     }
 
-    .whatsapp-button i {
-      color: white;
-    }
+    .whatsapp-button i { color: white; }
 
     footer {
       background: #003366;
@@ -238,10 +231,7 @@
       text-align: center;
     }
 
-    footer a {
-      color: #ffeb3b;
-      text-decoration: underline;
-    }
+    footer a { color: #ffeb3b; text-decoration: underline; }
 
     .logo {
       max-width: 150px;
@@ -249,18 +239,39 @@
       animation: fadeIn 2s ease;
     }
 
-    .contact-info {
-      font-size: 1.1rem;
-      margin-top: 1rem;
-    }
+    .contact-info { font-size: 1.1rem; margin-top: 1rem; }
 
-    .clean-background {
-      position: relative;
-      z-index: 1;
+    .clean-background { position: relative; z-index: 1; }
+
+    /* ==== AGREGADO: Estilos para video de fondo HD ==== */
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(0.4);
+    }
+    /* ============================================================== */
+
+    @media (max-width: 750px) {
+      /* Ocultar video en móviles */
+      #video-background { display: none; }
+      .video-background {
+        background: url('pvc.png') center/cover no-repeat;
+      }
     }
   </style>
 </head>
 <body class="clean-background">
+  <!-- ==== AGREGADO: Video de fondo HD ==== -->
+  <video autoplay muted loop playsinline id="video-background">
+    <source src="fontanero-fugas-agua-720p.mp4" type="video/mp4">
+  </video>
+  <!-- ====================================== -->
+
   <div class="overlay"></div>
 
   <header>
