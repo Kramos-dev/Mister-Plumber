@@ -60,11 +60,13 @@
 
     /* HEADER */
     .site-header {
+  background-color: #003366;
   display: flex;
   justify-content: space-between; /* logo a izquierda, nav a derecha */
   align-items: center;            /* centrado vertical */
   padding: 1rem 2rem;
   gap: 1rem;                      /* espacio entre logo, título y nav */
+  z-index: 2;                    /* asegúrate que esté sobre el video */
 }
 
 .header-logo {
