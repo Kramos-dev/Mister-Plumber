@@ -299,17 +299,13 @@
       outline: none;
     }
     .card h4 {
-     margin: 0;
-     font-weight: 600;
-     font-size: clamp(1rem, 2.8vw, 1.4rem);
-     color: var(--blue-dark);
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     display: block;
-     max-width: 100%;
-     line-height: 1.2;
-     user-select: text;
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
+  color: var(--blue-dark);
+  word-break: break-word; /* Rompe palabras largas si es necesario */
+  line-height: 1.2;
+  user-select: text;
 }
 
     .card p {
