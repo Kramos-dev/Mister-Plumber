@@ -165,7 +165,7 @@
     }
 
     .header-logo {
-      height: 100px;
+      height: 150px;
       user-select: none;
     }
 
@@ -426,9 +426,9 @@
         padding: 1rem 1.5rem;
       }
       .header-title {
-        font-size: 1.8rem;
-        text-align: center;
-      }
+      font-size: clamp(1.5rem, 5vw, 2.5rem); /* Ajuste dinámico */
+      white-space: nowrap;
+}
       nav.header-nav {
         gap: 1rem;
         flex-wrap: wrap;
