@@ -1,1 +1,416 @@
-a
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fontanero urgente 24/7 Costa Rica – Fugas de agua</title>
+  <meta name="description" content="¿Pagas de más en tu recibo? Mister Plumber, fontanero en San José, detecta y repara fugas de agua con fontanería profesional 24/7." />
+  <meta name="keywords" content="fontanero, detección de fugas de agua, fontanería, fontanero San José, fugas de agua Costa Rica" />
+  <meta name="author" content="Mister Plumber" />
+  <link rel="canonical" href="https://usuario.github.io/repositorio/" />
+  <meta property="og:title" content="Fontanero en San José • Detección de fugas de agua" />
+  <meta property="og:description" content="Fontanería profesional: detectamos y reparamos fugas invisibles en tuberías." />
+  <meta property="og:image" content="https://usuario.github.io/repositorio/misterplumberanimado.PNG" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="fG8xd-GQprHmvdjemCe2VAfA8h9cYL6_DjuE_Tw4Ap4" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Mister Plumber CR",
+    "url": "https://usuario.github.io/repositorio/",
+    "telephone": "+50684455890",
+    "description": "Fontanería y detección de fugas de agua en San José, Heredia, Alajuela y Cartago. Atención 24/7.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San José",
+      "addressRegion": "San José",
+      "addressCountry": "CR"
+    },
+    "areaServed": ["San José", "Heredia", "Alajuela", "Cartago"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 9.934739,
+      "longitude": -84.087502
+    },
+    "image": [
+      "https://usuario.github.io/repositorio/misterplumberlogo.png",
+      "https://usuario.github.io/repositorio/misterplumberanimado.PNG"
+    ],
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios Mister Plumber",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Detección de Fugas de Agua"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Reparación Inmediata"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fontanería General"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "120"
+    }
+  }
+  </script>
+
+  <!-- Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Fuente Amplitude Ultra -->
+  <link href="https://db.onlinewebfonts.com/c/38a68b7ba4001f6a4fe1a94e3fe9a772?family=AmplitudeCond-Ultra" rel="stylesheet">
+
+  <style>
+    /* 1. Base responsive */
+    html { font-size:16px; }
+    @media (max-width:480px) { html { font-size:14px; } }
+
+    /* 2. Animación fade-in */
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* 3. Estilos generales */
+    body {
+      margin:0;
+      padding:0;
+      font-family:'Segoe UI',sans-serif;
+      color:#fff;
+      background:url('pvc.png') center/cover fixed;
+      position:relative;
+      line-height:1.5;
+    }
+    .overlay {
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.55);
+      z-index:-1;
+    }
+
+    /* 4. Video fondo */
+    #video-background {
+      position:fixed;
+      top:0;
+      left:0;
+      min-width:100vw;
+      min-height:100vh;
+      object-fit:cover;
+      filter:brightness(220%);
+      z-index:-2;
+    }
+    @media (max-width:750px) {
+      #video-background { display:none; }
+    }
+
+    /* 5. Header */
+    .site-header {
+      background:#003366;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:1rem 2rem;
+      gap:1rem;
+      z-index:2;
+    }
+    .header-logo {
+      max-height:60px;
+      flex-shrink:0;
+    }
+    .header-title {
+      font-family:'AmplitudeCond-Ultra',sans-serif;
+      font-size:3rem;
+      color:#fff;
+      white-space:nowrap;
+      flex-shrink:1;
+      text-align:center;
+    }
+    .header-nav {
+      display:flex;
+      gap:1rem;
+      flex-shrink:0;
+      white-space:nowrap;
+    }
+    .header-nav a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:bold;
+      padding:0.5rem 0.75rem;
+      min-height:44px;
+      display:flex;
+      align-items:center;
+    }
+
+    /* 6. Hero */
+    .hero {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:2rem 1rem;
+      animation:fadeIn 2s ease-out;
+      text-align:center;
+    }
+    .hero h1 {
+      font-size:calc(2rem + 1vw);
+      line-height:1.2;
+      background:rgba(0,0,0,0.5);
+      padding:1rem;
+      border-radius:10px;
+      margin:0.5rem 0;
+    }
+    .hero h2 {
+      font-size:calc(1.5rem + 1vw);
+      background:rgba(0,0,0,0.5);
+      padding:1rem;
+      border-radius:10px;
+      margin:0.5rem 0;
+    }
+
+    /* 7. Sección fondo y botón WhatsApp */
+    .seccion-con-fondo {
+      background:url('pvc.png') center/cover no-repeat;
+      height:450px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin:3rem 0;
+      border-radius:12px;
+      box-shadow:0 4px 24px rgba(0,0,0,0.3);
+    }
+    .contenido-sobre-fondo {
+      background:rgba(0,0,0,0.55);
+      padding:2rem 3rem;
+      border-radius:10px;
+      text-align:center;
+      animation:fadeIn 2s ease-in-out;
+      box-shadow:0 4px 12px rgba(0,0,0,0.5);
+    }
+    .btn-whatsapp {
+      background:#25D366;
+      color:#fff;
+      font-weight:bold;
+      padding:.5rem 1rem;
+      border-radius:30px;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,128,0,0.6);
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+    }
+    .btn-whatsapp:hover {
+      background:#1ebe5b;
+    }
+
+    /* 8. Secciones de servicios */
+    .section {
+      padding:4rem 2rem;
+      max-width:1100px;
+      margin:auto;
+      animation:fadeIn 1.5s ease-out;
+    }
+    .section h3 {
+      font-size:2rem;
+      color:#ffeb3b;
+    }
+    .services, .seo-blocks {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+    }
+    .card {
+      background:#fff;
+      color:#000;
+      padding:2rem;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      transition:transform .3s;
+    }
+    .card:hover {
+      transform:translateY(-5px);
+    }
+    .card h4 {
+      margin:0 0 .5rem;
+    }
+    .card p {
+      margin:0;
+    }
+
+    /* 9. Formulario */
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+      margin-top:2rem;
+    }
+    input, textarea, button {
+      padding:.75rem;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:1rem;
+    }
+    button {
+      background:#003366;
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      padding:.75rem;
+    }
+    button:hover {
+      background:#005588;
+    }
+
+    /* 10. Botón flotante */
+    .whatsapp-button {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:2rem;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      text-decoration:none;
+      z-index:1000;
+    }
+    .whatsapp-button i {
+      color:#fff;
+    }
+
+    /* 11. Footer */
+    footer {
+      background:#003366;
+      color:#fff;
+      padding:2rem;
+      text-align:center;
+    }
+    footer a {
+      color:#ffeb3b;
+      text-decoration:underline;
+    }
+    .logo {
+      max-width:150px;
+      height:auto;
+      animation:fadeIn 2s ease;
+    }
+    .contact-info {
+      font-size:1.1rem;
+      margin-top:1rem;
+    }
+    .clean-background {
+      position:relative;
+      z-index:1;
+    }
+
+    /* 12. Ajustes finales mobile */
+    @media (max-width:750px) {
+      .site-header { padding:0.5rem 1rem; }
+      .header-logo { max-height:50px; }
+      .header-title { font-size:2rem; }
+      .hero { padding:2rem 1rem; }
+    }
+  </style>
+</head>
+<body class="clean-background">
+  <video autoplay muted loop playsinline id="video-background">
+    <source src="fontanero-fugas-agua-720p.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <header class="site-header">
+    <img src="misterplumberlogo.png.jpg" alt="Logo Mister Plumber" class="header-logo">
+    <div class="header-title">Mister Plumber</div>
+    <nav class="header-nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#por-que-nosotros">¿Por qué elegirnos?</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Fontanero urgente 24/7 en Costa Rica – reparaciones y fugas de agua</h1>
+    <h2>Fontanería Profesional en Costa Rica - Detección y Reparación de Fugas</h2>
+  </div>
+
+  <section class="seccion-con-fondo">
+    <div class="contenido-sobre-fondo">
+      <h2>Detectamos fugas invisibles</h2>
+      <p>Más de 12 años localizando pérdidas de agua con tecnología avanzada en San José.</p>
+      <a href="https://wa.me/50684455890" target="_blank" class="btn-whatsapp">Contáctanos por WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <h3>Servicios de Fontanería en San José</h3>
+    <div class="services">
+      <div class="card"><h4>🚰💧 Detección de Fugas</h4><p>¿Una fuga silenciosa te está vaciando el bolsillo? En Mister Plumber detectamos y reparamos fugas sin romper, rápido y con precisión. Más de 12 años salvando hogares en San José.</p></div>
+      <div class="card"><h4>🔧⚡ Reparación Inmediata</h4><p>Equipo profesional disponible 24/7 para reparar fugas de agua en tuberías, baños, techos y más.</p></div>
+      <div class="card"><h4>🧰🛠️ Fontanería General</h4><p>Instalación de tuberías, sanitarios, calentadores de agua y sistemas de presión para casas y negocios.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="por-que-nosotros">
+    <h3>¿Por Qué Elegir a Mister Plumber?</h3>
+    <div class="seo-blocks">
+      <div class="card"><h4>🏘️💧 Especialistas en San José y GAM</h4><p>¿Pagando más agua de la que usas? Las fugas invisibles hacen que tu factura se dispare. Nosotros las encontramos antes de que vacíen tu bolsillo.</p></div>
+      <div class="card"><h4>Reseñas 5 Estrellas 🌟🌟🌟🌟🌟</h4><p>Nuestros clientes nos recomiendan por rapidez, calidad y precios justos.</p></div>
+      <div class="card"><h4>🔎📈 Somos los Más Buscados</h4><p>La búsqueda de "fontanero San José" termina aquí porque ofrecemos resultados reales.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
+    <h3>Contáctanos</h3>
+    <p><i class="fas fa-phone-alt"></i> Llama al <strong>2226‑0504</strong> o <strong>8445‑5890</strong>. Servicio 24/7.</p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:mplumbercr@gmail.com" style="color:#fff;">mplumbercr@gmail.com</a></p>
+    <div class="contact-info"><p><i class="fas fa-map-marker-alt"></i> San José, Costa Rica</p></div>
+    <form action="mailto:mplumbercr@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="tel" name="telefono" placeholder="Tu número (8 dígitos)" pattern="[0-9]{8}" required />
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <footer>
+    <img src="misterplumberanimado.PNG" alt="Logo Mister Plumber" class="logo" />
+    <p>&copy; 2025 Mister Plumber. Todos los derechos reservados.</p>
+    <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+  </footer>
+
+  <a class="whatsapp-button" href="https://wa.me/50684455890" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
