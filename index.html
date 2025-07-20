@@ -122,6 +122,39 @@
       overflow-x: hidden;
     }
 
+    #preloader {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hidePreloader 1.5s ease 2.5s forwards;
+}
+
+.logo-intro {
+  width: 120px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeScale 2s ease forwards;
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hidePreloader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
     a {
       color: var(--green-accent);
       text-decoration: none;
@@ -464,6 +497,10 @@
   </style>
 </head>
 <body>
+
+  <div id="preloader">
+    <img src="tu-logo.png" alt="Mister Plumber" class="logo-intro" />
+  </div>
   <div class="overlay"></div>
 
   <video autoplay muted loop id="video-background" playsinline>
