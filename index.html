@@ -60,36 +60,59 @@
 
     /* HEADER */
     .site-header {
-      background:#003366;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:1rem 2rem;
-      flex-wrap: nowrap;
-    }
-    .header-logo {
-      max-height:60px;
-    }
-    .header-title {
-      font-family:'NewsSector Amplitude Ultra','AmplitudeCond-Ultra',sans-serif;
-      font-size:4rem;
-      color:#fff;
-      text-align:center;
-      margin:0 1rem;
-    }
-    .header-nav a {
-      margin-left:1rem;
-      color:#fff;
-      text-decoration:none;
-      font-weight:bold;
-      display: flex;
-      flex-wrap: nowrap;       /* ídem para el nav */
-      white-space: nowrap;
-    }
-    @media (max-width:750px) {
-      .header-title { font-size:2rem; margin:0 0.5rem; }
-      .header-logo { max-height:50px; }
-    }
+  display: flex;
+  justify-content: space-between; /* logo a izquierda, nav a derecha */
+  align-items: center;            /* centrado vertical */
+  padding: 1rem 2rem;
+  gap: 1rem;                      /* espacio entre logo, título y nav */
+}
+
+.header-logo {
+  max-height: 60px;
+  flex-shrink: 0;                /* evita que se reduzca */
+}
+
+.header-title {
+  font-family: 'NewsSector Amplitude Ultra','AmplitudeCond-Ultra',sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;           /* evita cortar palabras */
+  flex-shrink: 1;                /* cede espacio si es necesario */
+}
+
+.header-nav {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+  white-space: nowrap;           /* evita que los <a> se dividan en línea */
+}
+
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 750px) {
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
+  .header-logo {
+    max-height: 50px;
+  }
+  .header-title {
+    font-size: 2rem;
+    margin: 0 .5rem;
+  }
+  .header-nav {
+    gap: 0.5rem;
+  }
+  .header-nav a {
+    font-size: 0.9rem;
+  }
+}
+
 
     .seccion-con-fondo {
       background:url('pvc.png') center/cover no-repeat;
@@ -250,7 +273,7 @@
   <header class="site-header">
     <img src="misterplumberlogo.png.jpg" alt="Logo Mister Plumber" class="header-logo" />
     <div class="header-title">Mister Plumber</div>
-    <nav class="header-nav a">
+    <nav class="header-nav ">
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
       <a href="#por-que-nosotros">¿Por qué elegirnos?</a>
