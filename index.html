@@ -49,7 +49,10 @@
 
   <!-- Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  
+  <!-- Import fuente Amplitude Ultra -->
+  <link href="https://db.onlinewebfonts.com/c/38a68b7ba4001f6a4fe1a94e3fe9a772?family=AmplitudeCond-Ultra" rel="stylesheet">
+  
   <style>
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -173,6 +176,23 @@
       margin: 0.5rem 0;
     }
 
+    /* ==== AGREGADO: Título principal centrado con Amplitude Ultra ==== */
+.header-title {
+  font-family: 'AmplitudeCond-Ultra', sans-serif;
+  font-size: 3rem;           /* ≈48 px en escritorio */
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
+  color: #fff;
+}
+@media (max-width: 750px) {
+  .header-title {
+    font-size: 2rem;         /* ≈32 px en móviles */
+  }
+}
+
+
+    
     .section {
       padding: 4rem 2rem;
       max-width: 1100px;
@@ -303,6 +323,9 @@
       <a href="#por-que-nosotros">¿Por qué elegirnos?</a>
     </nav>
   </header>
+
+  <div class="header-title">Mister Plumber</div>
+
 
   <div class="hero">
   <h1>Fontanero urgente 24/7 en Costa Rica – reparaciones y fugas de agua</h1>
