@@ -120,6 +120,8 @@
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
+
     }
 
     a {
@@ -461,9 +463,68 @@
         transform: translateY(0);
       }
     }
+
+    /* 🌟 Estilos para la animación del logo */
+.logo-animado-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: fadeInUp 1.4s ease-out;
+  pointer-events: none;
+}
+
+#logo-animado {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(0, 183, 255, 0.7));
+  animation: bounce 2s infinite;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.05);
+  }
+}
+
+
   </style>
 </head>
 <body>
+  
+  <!-- 🌟 Logo animado estilo Pixar/Apple -->
+<div class="logo-animado-container">
+  <svg id="logo-animado" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20,100 Q60,10 100,100 T180,100"
+          stroke="#00B4D8" stroke-width="4" fill="none" stroke-linecap="round" />
+    <circle cx="100" cy="100" r="30" fill="#0077C8">
+      <animate attributeName="r" values="30;35;30" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="50%" y="115" text-anchor="middle" fill="white" font-size="22" font-family="Verdana">
+      MISTER
+    </text>
+    <text x="50%" y="140" text-anchor="middle" fill="white" font-size="18" font-family="Verdana">
+      PLUMBER
+    </text>
+  </svg>
+</div>
+
+
   <div class="overlay"></div>
 
   <video autoplay muted loop id="video-background" playsinline>
