@@ -461,10 +461,35 @@
         transform: translateY(0);
       }
     }
+
+    #svg-preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blue-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#svg-preloader img {
+  width: 200px;
+  height: auto;
+}
   </style>
 </head>
 <body>
   
+  <!-- Preloader del Logo SVG -->
+  <div id="svg-preloader">
+    <img src="https://raw.githubusercontent.com/fontaneroyfugasdeagua/Mister-Plumber/refs/heads/main/fontanero%20mister%20plumber.svg" alt="Logo Mister Plumber" />
+  </div>
+
+  <!-- Aquí sigue el video de fondo y demás contenido -->
+
+
   <div class="overlay"></div>
 
   <video autoplay muted loop id="video-background" playsinline>
@@ -536,5 +561,24 @@
     &copy; 2025 Mister Plumber Costa Rica | 
     <a href="mailto:contacto@misterplumbercr.com" aria-label="Correo electrónico de Mister Plumber">contacto@misterplumbercr.com</a>
   </footer>
+  <script>
+  // Esperar a que cargue toda la página
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('svg-preloader');
+
+    // Espera máximo 3 segundos o hasta que termine la animación SVG
+    // Para este ejemplo, lo ocultamos a los 3 segundos
+    setTimeout(() => {
+      preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
+
+      // Luego quitamos el div para que no moleste
+      setTimeout(() => {
+        preloader.remove();
+      }, 500); // Espera medio segundo para el fade out
+    }, 3000);
+  });
+</script>
+
 </body>
 </html>
