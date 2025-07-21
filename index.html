@@ -502,7 +502,9 @@
     visibility: hidden;
   }
 }
-   
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
   </style>
 </head>
 <body>
@@ -518,10 +520,10 @@
     Tu navegador no soporta el video de fondo.
   </video>
 
-  <header class="site-header" role="banner">
-    <img src="Fontanero Costa Rica - Fugas de agua.png" alt="Logo Fontanero Mister Plumber" class="header-logo" />
-    <h1 class="header-title">Mister Plumber Costa Rica</h1>
-    <nav class="header-nav" role="navigation" aria-label="Navegación principal">
+  <header class="site-header" role="banner" data-aos="fade-down">
+    <img src="Fontanero Costa Rica - Fugas de agua.png" alt="Logo Fontanero Mister Plumber" class="header-logo" data-aos="zoom-in" data-aos-delay="100" />
+    <h1 class="header-title" data-aos="fade-up" data-aos-delay="200" >Mister Plumber Costa Rica</h1>
+    <nav class="header-nav" role="navigation" aria-label="Navegación principal" data-aos="fade-up" data-aos-delay="300"> >
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
       <a href="https://www.facebook.com/people/Mister-Plumber-Detector-de-Fugas-Fontaneria-y-Destaqueos/100057401951750/" target="_blank" rel="noopener" aria-label="Facebook Mister Plumber"><i class="fab fa-facebook-f"></i></a>
@@ -530,25 +532,25 @@
   </header>
 
   <section class="hero" role="main" aria-label="Introducción">
-    <h1>¿Sospechas de una fuga de agua?</h1>
-    <h2>Fontanero urgente 24/7 Costa Rica</h2>
-    <a href="https://wa.me/50684455890" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-  </section>
+    <h1 data-aos="fade-up" >¿Sospechas de una fuga de agua?</h1>
+    <h2 data-aos="fade-up" data-aos-delay="150" >Fontanero urgente 24/7 Costa Rica</h2>
+    <<a href="https://wa.me/50684455890" class="btn-whatsapp" aria-label="Contactar por WhatsApp" data-aos="zoom-in" data-aos-delay="300">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+</section>
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
-    <h3>Servicios de Fontanería en Costa Rica</h3>
+    <h3 data-aos="fade-u" >Servicios de Fontanería en Costa Rica</h3>
     <div class="services">
-      <article class="card" tabindex="0">
+      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="0" >
         <h4>🚰💧 Detección de Fugas</h4>
         <p>¿Una fuga silenciosa te está vaciando el bolsillo? En Mister Plumber detectamos y reparamos fugas de agua, rápido y con precisión. Más de 12 años salvando hogares en San José.</p>
       </article>
-      <article class="card" tabindex="0">
+      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="150" >
         <h4>🔧⚡ Reparación Inmediata</h4>
         <p>Equipo profesional disponible 24/7 para reparar fugas de agua en tuberías, baños, techos y más. Atención inmediata para que no pagues de más y tu hogar esté seguro.</p>
       </article>
-      <article class="card" tabindex="0">
+      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="300" >
         <h4>🛠️🏠 Fontanería General</h4>
         <p>Desde instalación hasta mantenimiento de tuberías y sanitarios, ofrecemos un servicio integral con garantía. Calidad y confianza que tu hogar merece.</p>
       </article>
@@ -556,8 +558,8 @@
   </section>
 
   <section class="section" id="contacto" aria-label="Contacto">
-    <h3>Contacto Mister Plumber</h3>
-    <form action="https://formspree.io/f/xqaleyal" method="POST" novalidate>
+    <h3 data-aos="fade-up">Contacto Mister Plumber</h3>
+    <form action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200" >
       <label for="nombre">Nombre completo</label>
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
 
@@ -574,11 +576,11 @@
     </form>
   </section>
 
-  <a href="https://wa.me/50684455890" target="_blank" rel="noopener" aria-label="WhatsApp Mister Plumber" class="whatsapp-button">
+  <a href="https://wa.me/50684455890" target="_blank" rel="noopener" aria-label="WhatsApp Mister Plumber" class="whatsapp-button" data-aos="fade-left">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <footer>
+  <footer data-aos="fade-in">
     &copy; 2025 Mister Plumber Costa Rica | 
     <a href="mailto:contacto@misterplumbercr.com" aria-label="Correo electrónico de Mister Plumber">contacto@misterplumbercr.com</a>
   </footer>
@@ -590,6 +592,15 @@
     }, 3000); // 1.5s animación + 1.5s espera para asegurar salida
   });
 </script>
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // duración de las animaciones en milisegundos
+    once: true,     // solo se anima una vez
+  });
+</script>
 
+  
 </body>
 </html>
