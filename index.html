@@ -31,6 +31,24 @@
   gtag('config', 'AW-17386181088');
 </script>
 
+  <!-- Event snippet for Contacto conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17386181088/R9F7CPTCifcaEOCjsOJA',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -232,6 +250,33 @@
       max-width: 720px;
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
+
+     .call-button {
+  position: fixed;
+  bottom: 100px; /* un poco más arriba que el botón de WhatsApp */
+  right: 28px;
+  background: #00e676; /* verde llamativo */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 230, 118, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #0b2245;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;
+}
+.call-button:hover,
+.call-button:focus-visible {
+  background: #69f0ae;
+  box-shadow: 0 8px 20px rgba(0, 230, 118, 0.8);
+  outline: none;
+}
+
+    
     .btn-whatsapp {
       background: var(--green-accent);
       color: var(--blue-dark);
@@ -519,7 +564,7 @@
 <body>
   <!-- Animación PNG de inicio -->
 <div id="logo-container">
-  <img src="fontanero mister plumber.png" alt="Fugas Mister Plumber" id="logo-intro" />
+  <img src="fontanero mister plumber.png" alt="Fugas de agua Mister Plumber" id="logo-intro" />
 </div>
 
   <div class="overlay"></div>
@@ -546,6 +591,9 @@
     <a href="https://wa.me/50684455890" class="btn-whatsapp" aria-label="Contactar por WhatsApp" data-aos="zoom-in" data-aos-delay="300">
     <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
+    <a href="tel:+50684455890" target="_blank" rel="noopener" aria-label="Llamar a Mister Plumber" class="call-button" data-aos="fade-left">
+  <i class="fas fa-phone-alt"></i>
+</a>
 </section>
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
