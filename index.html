@@ -127,6 +127,13 @@ function gtag_report_conversion(url) {
   <!-- AOS Library -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+  <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+
 
   <style>
     :root {
@@ -638,24 +645,101 @@ function gtag_report_conversion(url) {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
-<section class="parallax-section" id="servicios">
-  <div class="parallax-content">
-    <h2>Servicios Profesionales</h2>
-    <p>Detección de fugas, reparación de tuberías, fontanería de emergencia y más.</p>
-    <a href="tel:+50684455890" class="button-apple">Solicitar Servicio</a>
-  </div>
-</section>
+/* === Sección de testimonios con Swiper === */
+.testimonials-section {
+  padding: 80px 20px;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.swiper {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.stars {
+  font-size: 1.2rem;
+  color: #f5c518;
+  margin-bottom: 8px;
+}
+
+.testimonial-card span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Swiper arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007BFF;
+}
+    
+
+.badge-experiencia {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: gold;
+  color: #000;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+  z-index: 999;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,215,0, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,215,0, 1); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,215,0, 0.7); }
+}
 
     
   </style>
 </head>
 <body>
 
+  <div class="badge-experiencia">🎖️ 20 años en el mercado</div>
+ 
+  <!-- Toggle Button -->
+<button onclick="toggleTheme()" class="call-button">🌙 Cambiar tema</button>
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("light-theme");
+  }
+</script>
   
   <!-- Animación PNG de inicio -->
 <div id="logo-container">
   <img src="fontanero mister plumber.png" alt="Animación de inicio - Logo Fontanero Mister Plumber Costa Rica" id="logo-intro" />
 </div>
+
 
   <div class="overlay"></div>
 
@@ -717,6 +801,41 @@ function gtag_report_conversion(url) {
       </article>
     </div>
   </section>
+
+  <section id="testimonios" class="testimonials-section">
+  <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Testimonio 1 -->
+      <div class="swiper-slide testimonial-card">
+        <p>“Detectaron una fuga invisible. ¡Me salvaron de una factura gigante!”</p>
+        <div class="stars">★★★★★</div>
+        <span>— Laura M., Escazú</span>
+      </div>
+
+      <!-- Testimonio 2 -->
+      <div class="swiper-slide testimonial-card">
+        <p>“Servicio de alta calidad y amabilidad. Puntuales y confiables.”</p>
+        <div class="stars">★★★★★</div>
+        <span>— Carlos G., San José</span>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="swiper-slide testimonial-card">
+        <p>“Un equipo serio, responsable y rápido. Los recomiendo totalmente.”</p>
+        <div class="stars">★★★★★</div>
+        <span>— María P., Curridabat</span>
+      </div>
+
+    </div>
+
+    <!-- Flechas -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
 
   <!-- Galería de Fotos -->
 <section class="section" id="galeria-fotos" aria-label="Galería de fotos de servicios">
@@ -808,6 +927,33 @@ function gtag_report_conversion(url) {
   });
 </script>
 
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
 
   
 </body>
