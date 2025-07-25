@@ -616,12 +616,42 @@ function gtag_report_conversion(url) {
   font-size: 1.1rem;
 }
 
+/* === Microanimaciones modernas === */
+.button-apple, .btn-whatsapp, .call-button, .btn-cta {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
 
+.button-apple:hover,
+.btn-whatsapp:hover,
+.call-button:hover,
+.btn-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.button-apple:active,
+.btn-whatsapp:active,
+.call-button:active,
+.btn-cta:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+<section class="parallax-section" id="servicios">
+  <div class="parallax-content">
+    <h2>Servicios Profesionales</h2>
+    <p>Detección de fugas, reparación de tuberías, fontanería de emergencia y más.</p>
+    <a href="tel:+50684455890" class="button-apple">Solicitar Servicio</a>
+  </div>
+</section>
 
     
   </style>
 </head>
 <body>
+
+  
   <!-- Animación PNG de inicio -->
 <div id="logo-container">
   <img src="fontanero mister plumber.png" alt="Animación de inicio - Logo Fontanero Mister Plumber Costa Rica" id="logo-intro" />
@@ -660,6 +690,15 @@ function gtag_report_conversion(url) {
 
 
 </section>
+
+  <section class="parallax-section" id="servicios">
+  <div class="parallax-content">
+    <h2>Servicios Profesionales</h2>
+    <p>Detección de fugas, reparación de tuberías, fontanería de emergencia y más.</p>
+    <a href="tel:+50684455890" class="button-apple">Solicitar Servicio</a>
+  </div>
+</section>
+
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
     <h3 data-aos="fade-up" >Servicios de Fontanería en Costa Rica</h3>
@@ -755,6 +794,20 @@ function gtag_report_conversion(url) {
     once: true,     // solo se anima una vez
   });
 </script>
+
+  <audio id="clickSound" src="click-ui-suave-mister-plumber.mp3" preload="auto"></audio>
+<script>
+  const clickSound = document.getElementById("clickSound");
+  document.querySelectorAll('a, button, .btn-whatsapp, .call-button').forEach(el => {
+    el.addEventListener('click', () => {
+      if (!el.classList.contains('whatsapp-button')) {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(() => {});
+      }
+    });
+  });
+</script>
+
 
   
 </body>
