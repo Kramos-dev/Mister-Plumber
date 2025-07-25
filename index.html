@@ -182,7 +182,7 @@ function gtag_report_conversion(url) {
       top: 0; left: 0;
       width: 100vw; height: 100vh;
       object-fit: cover;
-      filter: brightness(200%) saturate(1.2);
+      filter: brightness(120%) saturate(1.2);
       z-index: -2;
     }
 
@@ -343,8 +343,7 @@ function gtag_report_conversion(url) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      padding: 80px 20px;
-      text-align: center;
+      
     }
 
     .card {
@@ -701,24 +700,41 @@ function gtag_report_conversion(url) {
 }
     
 
-.badge-experiencia {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: gold;
+.experience-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #ffffffcc, #e8e8e8cc);
+  color: #1a1a1a;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200,200,200,0.4);
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.experience-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.badge-number {
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #000;
-  font-weight: bold;
-  padding: 0.6rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
-  z-index: 999;
+  line-height: 1;
 }
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,215,0, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,215,0, 1); }
-  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,215,0, 0.7); }
+
+.badge-text {
+  text-transform: lowercase;
+  color: #444;
 }
+
 
     
   </style>
@@ -737,10 +753,6 @@ function gtag_report_conversion(url) {
 <div id="logo-container">
   <img src="fontanero mister plumber.png" alt="Animación de inicio - Logo Fontanero Mister Plumber Costa Rica" id="logo-intro" />
 </div>
-
-
-  <div class="badge-experiencia">🎖️ 20 años en el mercado</div>
-  <div class="overlay"></div>
 
   <video autoplay muted loop id="video-background" playsinline>
     <source src="fontanero-fugas-agua-720p.mp4" type="video/mp4" />
@@ -761,6 +773,9 @@ function gtag_report_conversion(url) {
   <section class="hero" role="main" aria-label="Introducción">
     <h1 data-aos="fade-up" >¿Sospechas de una fuga de agua?</h1>
     <h2 data-aos="fade-up" data-aos-delay="150" >Fontanero urgente 24/7 Costa Rica</h2>
+    
+    <div class="experience-badge" data-aos="fade-up" data-aos-delay="400">
+
     <!-- Botón Llamada -->
 <a href="tel:+50684455890" target="_blank" rel="noopener" aria-label="Llamar a Mister Plumber" class="call-button" data-aos="fade-left">
   <i class="fas fa-phone-alt"></i> Llamar a Mister Plumber
