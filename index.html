@@ -49,6 +49,40 @@ function gtag_report_conversion(url) {
 }
 </script>
 
+  <!-- Google Ads Conversion Event -->
+<script>
+  function reportConversion(form) {
+    // Enviar formulario manualmente
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17386181088/R9F7CPTCifcaEOCjsOJA' // Reemplaza con tu ID real
+        });
+
+        alert("Mensaje enviado correctamente.");
+        form.reset();
+      } else {
+        alert("Error al enviar el mensaje.");
+      }
+    })
+    .catch(() => {
+      alert("Hubo un error al enviar el formulario.");
+    });
+
+    return false; // evitar recarga
+  }
+</script>
+
+
  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -819,14 +853,26 @@ function gtag_report_conversion(url) {
     <h2 data-aos="fade-up" data-aos-delay="150" >Fontanero urgente 24/7 Costa Rica</h2>
     
     <!-- Botón Llamada -->
-<a href="tel:+50684455890"  rel="noopener" aria-label="Llamar a Mister Plumber" class="call-button" data-aos="fade-left">
+<a href="tel:+50684455890"
+   rel="noopener"
+   aria-label="Llamar a Mister Plumber"
+   class="call-button"
+   data-aos="fade-left"
+   onclick="return gtag_report_conversion('tel:+50684455890');">
   <i class="fas fa-phone-alt"></i> Llamar a Mister Plumber
 </a>
+
     
-<!-- Botón WhatsApp -->
-<a href="https://wa.me/50684455890" class="btn-whatsapp" aria-label="Contactar por WhatsApp" data-aos="zoom-in" data-aos-delay="300">
+<!-- Botón WhatsApp con seguimiento de conversión -->
+<a href="https://wa.me/50684455890"
+   class="btn-whatsapp"
+   aria-label="Contactar por WhatsApp"
+   data-aos="zoom-in"
+   data-aos-delay="300"
+   onclick="return gtag_report_conversion('https://wa.me/50684455890');">
   <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
+
  </section>
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
@@ -917,7 +963,7 @@ function gtag_report_conversion(url) {
 
   <section class="section" id="contacto" aria-label="Contacto">
     <h3 data-aos="fade-up">Contacto Mister Plumber</h3>
-    <form action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200" >
+    <form action="https://formspree.io/f/xqaleyal" method="POST" onsubmit="return reportConversion(this);" novalidate data-aos="fade-up" data-aos-delay="200" >
       <label for="nombre">Nombre completo</label>
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
 
