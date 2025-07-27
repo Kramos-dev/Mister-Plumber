@@ -1108,6 +1108,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 </script>
 
+  <script>
+  const wrench = document.querySelector('.wrench-svg');
+  const waterSound = document.getElementById('waterSound');
+  const wrenchClick = document.getElementById('wrenchClick');
+  const drop = document.getElementById('drop');
+
+  let counter = 0;
+  setInterval(() => {
+    counter++;
+    if (counter % 6 === 0) {
+      // Cada 6 segundos: activa animación sincronizada
+      drop.style.animation = 'none'; // Reiniciar animación
+      drop.offsetHeight; // Trigger repaint
+      drop.style.animation = 'drip 6s ease-in-out infinite';
+
+      waterSound.currentTime = 0;
+      waterSound.play();
+
+      setTimeout(() => {
+        wrenchClick.currentTime = 0;
+        wrenchClick.play();
+      }, 500); // Retraso para sincronizar con giro
+    }
+  }, 6000);
+</script>
+
   
 </body>
 </html>
