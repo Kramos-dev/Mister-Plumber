@@ -420,7 +420,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 
 /* Card */
 .card {
-  background: var(--white);
+  background: linear-gradient(270deg, #1da7e0, #1573c5, #0c4ca6, #122e87, #2a2972, #1da7e0);
   color: var(--blue-dark);
   padding: 2rem;
   border-radius: 16px;
@@ -433,6 +433,35 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   width: 100%;
   max-width: 500px;
 }
+
+* Capa de partículas flotantes */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 70%);
+  background-size: 100px 100px;
+  animation: floatParticles 60s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Efecto brillante sutil encima */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+}
+    
+    
 
 /* Video */
 .video-card video {
