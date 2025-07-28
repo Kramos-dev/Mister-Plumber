@@ -187,17 +187,18 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Capa de partículas flotantes */
+/* corrientes de agua */
 .header-site::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 70%);
-  background-size: 100px 100px;
-  animation: floatParticles 60s linear infinite;
+  width: 300%;
+  height: 300%;
+  background: url('https://i.ibb.co/pQYPXbY/water-texture-loop.gif') repeat;
+  background-size: cover;
+  opacity: 0.2;
+  animation: moveWater 50s linear infinite;
   z-index: 0;
   pointer-events: none;
 }
@@ -267,13 +268,15 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   }
 }
 
-@keyframes floatParticles {
+/* Movimiento sutil como corriente */
+@keyframes moveWater {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0%, 0%);
   }
   100% {
     transform: translate(-50%, -50%);
   }
+}
 }
 
 /* RESPONSIVE */
@@ -951,10 +954,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div>
 </section>
-
-  
     
-
   <section id="testimonios" class="testimonials-section">
   <h2 class="section-title">Lo que dicen nuestros clientes</h2>
   <div class="swiper mySwiper">
@@ -1085,6 +1085,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     },
   });
 </script>
+
+  <audio id="aguaSonido" preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c260560c67.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("aguaSonido");
+    let yaSono = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !yaSono) {
+          audio.volume = 0.2;
+          audio.play().catch(() => {});
+          yaSono = true;
+        }
+      });
+    }, {
+      threshold: 0.5 // el 50% del header debe estar visible
+    });
+
+    const header = document.querySelector(".header-site");
+    if (header) observer.observe(header);
+  });
+</script>
+
  
 </body>
 </html>
