@@ -323,40 +323,62 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       user-select: none;
     }
 
-    .services {
+    /* Grid general de servicios */
+.services {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
 }
 
+/* Tarjetas de servicios */
 .card {
   background: var(--white);
+  color: var(--blue-dark);
+  padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px var(--shadow);
-  padding: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: 1.5rem;
 }
 
-.card video {
+/* Tarjetas con video */
+.video-card {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.video-card video {
   width: 100%;
-  max-height: 200px;
-  object-fit: cover;
+  height: auto;
   border-radius: 12px;
+  object-fit: cover;
+  max-height: 250px;
 }
 
-@media (max-width: 768px) {
-  .services {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+/* Texto debajo del video */
+.video-card figcaption {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsividad adicional si lo deseas */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
   }
 
-  .card video {
-    max-height: 180px;
+  .video-card video {
+    max-height: 200px;
+  }
+
+  .video-card figcaption {
+    font-size: 0.85rem;
   }
 }
 
@@ -795,33 +817,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </section>
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
-    <h3 data-aos="fade-up" >Servicios de Fontanería en Costa Rica</h3>
-    <div class="services">
-      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="0">
-  <h4>🚰💧 Detección de Fugas</h4>
-  <p>¿Una fuga silenciosa te está vaciando el bolsillo? En Mister Plumber detectamos y reparamos fugas de agua, rápido y con precisión. Más de 20 años  hogares en Costa Rica.</p>
+  <h3 data-aos="fade-up">Servicios de Fontanería en Costa Rica</h3>
+  <div class="services">
 
-  <figure class="video-card" data-aos="fade-up">
-    <video controls poster="Fugas-poster1.jpg" title="Cómo detectar fugas de agua en casa - Mister Plumber Costa Rica">
-      <source src="Fontanero-misterplumber-video-fugas.mp4" type="video/mp4" />
-      <track src="subtitulos-fugas.vtt" kind="subtitles" srclang="es" label="Español" default>
-    </video>
-    <figcaption>
-      Aprende a detectar fugas de agua en casa de forma rápida y eficaz. Video explicativo de Mister Plumber, expertos en fontanería en San José, Costa Rica.
-    </figcaption>
-  </figure>
-</article>
+    <!-- Servicio 1: Detección de Fugas -->
+    <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="0">
+      <h4>🚰💧 Detección de Fugas</h4>
+      <p>¿Una fuga silenciosa te está vaciando el bolsillo? En Mister Plumber detectamos y reparamos fugas de agua, rápido y con precisión. Más de 20 años  hogares en Costa Rica.</p>
+      <figure class="video-card" data-aos="fade-up">
+        <video controls poster="Fugas-poster1.jpg" title="Cómo detectar fugas de agua en casa - Mister Plumber Costa Rica">
+          <source src="Fontanero-misterplumber-video-fugas.mp4" type="video/mp4" />
+          <track src="subtitulos-fugas.vtt" kind="subtitles" srclang="es" label="Español" default>
+        </video>
+        <figcaption>
+          Aprende a detectar fugas de agua en casa de forma rápida y eficaz. Video explicativo de Mister Plumber, expertos en fontanería en San José, Costa Rica.
+        </figcaption>
+      </figure>
+    </article>
 
-      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="150" >
-        <h4>🔧⚡ Reparación Inmediata</h4>
-        <p>Equipo profesional disponible 24/7 para reparar fugas de agua en tuberías, baños, techos y más. Atención inmediata para que no pagues de más y tu hogar esté seguro.</p>
-      </article>
-      <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="300" >
-        <h4>🛠️🏠 Fontanería General</h4>
-        <p>Desde instalación hasta mantenimiento de tuberías y sanitarios, ofrecemos un servicio integral con garantía. Calidad y confianza que tu hogar merece.</p>
-      </article>
-    </div>
-  </section>
+    <!-- Servicio 2: Reparación Inmediata -->
+    <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="150">
+      <h4>🔧⚡ Reparación Inmediata</h4>
+      <p>Equipo profesional disponible 24/7 para reparar fugas de agua en tuberías, baños, techos y más. Atención inmediata para que no pagues de más y tu hogar esté seguro.</p>
+      <figure class="video-card" data-aos="fade-up">
+        <video controls poster="Reparacion-poster2.jpg" title="Reparación rápida de tuberías - Mister Plumber Costa Rica">
+          <source src="Fontanero-misterplumber-video-reparacion.mp4" type="video/mp4" />
+        </video>
+        <figcaption>
+          Descubre cómo reparamos fugas con rapidez y eficiencia. Servicio inmediato de Mister Plumber en todo Costa Rica.
+        </figcaption>
+      </figure>
+    </article>
+
+    <!-- Servicio 3: Fontanería General -->
+    <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="300">
+      <h4>🛠️🏠 Fontanería General</h4>
+      <p>Desde instalación hasta mantenimiento de tuberías y sanitarios, ofrecemos un servicio integral con garantía. Calidad y confianza que tu hogar merece.</p>
+      <figure class="video-card" data-aos="fade-up">
+        <video controls poster="Fontaneria-poster3.jpg" title="Servicios de fontanería general - Mister Plumber Costa Rica">
+          <source src="Fontanero-misterplumber-video-general.mp4" type="video/mp4" />
+        </video>
+        <figcaption>
+          Conoce nuestros servicios integrales de fontanería: instalaciones, sanitarios, mantenimiento y más.
+        </figcaption>
+      </figure>
+    </article>
+
+  </div>
+</section>
+
 
   <section id="testimonios" class="testimonials-section">
   <h2 class="section-title">Lo que dicen nuestros clientes</h2>
