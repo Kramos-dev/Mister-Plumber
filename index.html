@@ -579,24 +579,53 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   box-shadow: 0 10px 30px rgba(0,0,0,0.45);
 }
 
+/* General: estilos para cada tarjeta de servicio */
+.card.servicio {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+/* Video responsivo dentro de tarjeta */
 .video-card {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   text-align: center;
 }
 
 .video-card video {
   width: 100%;
-  max-width: 480px;
+  max-width: 640px;
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Figcaption limpio y SEO-friendly */
 .video-card figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  color: #333;
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  color: #444;
   font-style: italic;
+  line-height: 1.5;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card.servicio {
+    padding: 1rem;
+  }
+
+  .video-card figcaption {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
 
 
 /* === Microanimaciones modernas === */
