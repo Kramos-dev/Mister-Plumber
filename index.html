@@ -170,19 +170,28 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     }
 
     header.site-header {
-      background: linear-gradient(to right, #1da7e0, #1573c5, #0c4ca6, #122e87, #2a2972);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 3rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-      box-shadow: 0 2px 10px var(--shadow);
-      border-radius: 0 0 12px 12px;
-    }
+      background: linear-gradient(270deg, #1da7e0, #1573c5, #0c4ca6, #122e87, #2a2972, #1da7e0);
+  background-size: 1200% 1200%;
+  animation: gradientMove 25s ease infinite;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación del gradiente */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
     .header-logo {
       height: 150px;
