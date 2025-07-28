@@ -169,30 +169,65 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       z-index: -2;
     }
 
-    header.site-header {
-      background: linear-gradient(270deg, #1da7e0, #1573c5, #0c4ca6, #122e87, #2a2972, #1da7e0);
+  header.site-header {
+  position: relative;
+  background: linear-gradient(270deg, #1da7e0, #1573c5, #0c4ca6, #122e87, #2a2972, #1da7e0);
   background-size: 1200% 1200%;
   animation: gradientMove 25s ease infinite;
   color: white;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
-  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
-/* Animación del gradiente */
+/* ANIMACIÓN DEL GRADIENTE */
 @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* BRILLO SUAVE CON OVERLAY */
+.reader-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15), transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: pulseGlow 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.05); opacity: 0.6; }
+}
+
+/* PARTÍCULAS FLUIDAS */
+.reader-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.05;
+  animation: particlesFlow 90s linear infinite;
+  z-index: 1;
+}
+
+@keyframes particlesFlow {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50%, 50%); }
+}
+
+
+      
     .header-logo {
       height: 150px;
       user-select: none;
