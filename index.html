@@ -761,101 +761,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     border-color: rgba(255,255,255,0.2);
   }
 }
-
-.experience-tube-real {
-  background-color: #0a0a0a;
-  padding: 3rem 0;
-  display: flex;
-  justify-content: center;
-}
-
-.pipe-real {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  height: 90px;
-  background: linear-gradient(to right, #999, #ccc, #aaa, #999);
-  border-radius: 45px;
-  box-shadow: inset 0 4px 15px rgba(0,0,0,0.6), 0 8px 25px rgba(0,0,0,0.4);
-  overflow: hidden;
-}
-
-.water-flow-real {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    120deg,
-    #00bfff 0px,
-    #00bfff 15px,
-    #0077cc 15px,
-    #0077cc 30px
-  );
-  animation: waterRealFlow 4s linear infinite;
-  opacity: 0.2;
-  z-index: 1;
-}
-
-@keyframes waterRealFlow {
-  0% { background-position: 0 0; }
-  100% { background-position: 200px 200px; }
-}
-
-.text-ticker-real {
-  position: relative;
-  font-size: 1.8rem;
-  font-weight: bold;
-  font-family: "Segoe UI", sans-serif;
-  color: white;
-  z-index: 2;
-  padding: 0 2rem;
-  animation: scrollText 15s linear infinite;
-  white-space: nowrap;
-  text-shadow: 1px 1px 3px black;
-}
-
-@keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.wrench-svg {
-  position: absolute;
-  right: 20px;
-  top: -20px;
-  width: 64px;
-  height: 64px;
-  z-index: 3;
-  transform-origin: 50% 50%;
-  animation: wrenchTurn 6s ease-in-out infinite;
-}
-
-@keyframes wrenchTurn {
-  0%, 40%, 100% { transform: rotate(0deg); }
-  45%, 55% { transform: rotate(-40deg); }
-}
-
-.water-drop {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background: #00bfff;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  animation: drip 6s ease-in-out infinite;
-  z-index: 2;
-}
-
-@keyframes drip {
-  0%, 39% { opacity: 0; transform: translate(-50%, -50%) scaleY(0.2); }
-  40% { opacity: 1; transform: translate(-50%, 30%) scaleY(1.2); }
-  45% { opacity: 0; transform: translate(-50%, 100%) scaleY(1); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scaleY(0.2); }
-}
-
-
    
   </style>
 </head>
@@ -1107,33 +1012,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     },
   });
 </script>
-
-  <script>
-  const wrench = document.querySelector('.wrench-svg');
-  const waterSound = document.getElementById('waterSound');
-  const wrenchClick = document.getElementById('wrenchClick');
-  const drop = document.getElementById('drop');
-
-  let counter = 0;
-  setInterval(() => {
-    counter++;
-    if (counter % 6 === 0) {
-      // Cada 6 segundos: activa animación sincronizada
-      drop.style.animation = 'none'; // Reiniciar animación
-      drop.offsetHeight; // Trigger repaint
-      drop.style.animation = 'drip 6s ease-in-out infinite';
-
-      waterSound.currentTime = 0;
-      waterSound.play();
-
-      setTimeout(() => {
-        wrenchClick.currentTime = 0;
-        wrenchClick.play();
-      }, 500); // Retraso para sincronizar con giro
-    }
-  }, 6000);
-</script>
-
-  
+ 
 </body>
 </html>
