@@ -323,14 +323,23 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       user-select: none;
     }
 
-    /* Grid general de servicios */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  /* Centra el título */
+.servicios-titulo {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--white);
 }
 
-/* Tarjetas de servicios */
+/* Ajuste responsivo de grilla */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Card */
 .card {
   background: var(--white);
   color: var(--blue-dark);
@@ -341,24 +350,27 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
 }
 
-/* Tarjetas con video */
-.video-card {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
+/* Video */
 .video-card video {
   width: 100%;
-  height: auto;
   border-radius: 12px;
-  object-fit: cover;
-  max-height: 250px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
+
+.video-card figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #444;
+  text-align: center;
+}
+  
+
+
 
 /* Texto debajo del video */
 .video-card figcaption {
@@ -817,10 +829,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  </section>
 
   <section class="section services" id="servicios" aria-label="Servicios de fontanería">
-  <h3 data-aos="fade-up">Servicios de Fontanería en Costa Rica</h3>
+  <h3 class="servicios-titulo" data-aos="fade-up">Servicios de Fontanería en Costa Rica</h3>
+
   <div class="services">
 
-    <!-- Servicio 1: Detección de Fugas -->
+    <!-- Servicio 1 -->
     <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="0">
       <h4>🚰💧 Detección de Fugas</h4>
       <p>¿Una fuga silenciosa te está vaciando el bolsillo? En Mister Plumber detectamos y reparamos fugas de agua, rápido y con precisión. Más de 20 años  hogares en Costa Rica.</p>
@@ -835,7 +848,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </figure>
     </article>
 
-    <!-- Servicio 2: Reparación Inmediata -->
+    <!-- Servicio 2 -->
     <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="150">
       <h4>🔧⚡ Reparación Inmediata</h4>
       <p>Equipo profesional disponible 24/7 para reparar fugas de agua en tuberías, baños, techos y más. Atención inmediata para que no pagues de más y tu hogar esté seguro.</p>
@@ -849,7 +862,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </figure>
     </article>
 
-    <!-- Servicio 3: Fontanería General -->
+    <!-- Servicio 3 -->
     <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="300">
       <h4>🛠️🏠 Fontanería General</h4>
       <p>Desde instalación hasta mantenimiento de tuberías y sanitarios, ofrecemos un servicio integral con garantía. Calidad y confianza que tu hogar merece.</p>
@@ -866,6 +879,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+  
+    
 
   <section id="testimonios" class="testimonials-section">
   <h2 class="section-title">Lo que dicen nuestros clientes</h2>
