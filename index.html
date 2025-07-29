@@ -1161,14 +1161,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     &copy; 2025 Mister Plumber Costa Rica | 
     <a href="mailto:contacto@misterplumbercr.com" aria-label="Correo electrónico de Mister Plumber">contacto@misterplumbercr.com</a>
   </footer>
+  
   <script>
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const logo = document.getElementById("logo-container");
-      if (logo) logo.remove();
-    }, 3000); // 1.5s animación + 1.5s espera para asegurar salida
-  });
+
+window.addEventListener("load", () => {
+  const logo = document.getElementById("logo-container");
+  if (logo) {
+    logo.addEventListener("animationend", (e) => {
+      if (e.animationName === "fadeOut") {
+        logo.remove(); // o logo.style.display = "none";
+      }
+    });
+  }
+});
+    
 </script>
+  
 <!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
