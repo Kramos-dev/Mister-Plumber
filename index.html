@@ -718,8 +718,8 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   height: 100vh;
   background: linear-gradient(135deg, #ffffff, #00cfff, #0051ff, #001f8b);
   background-size: 400% 400%;
-  animation: shimmerEntrance 1.5s ease-out, fadeOut 1s ease-in-out forwards;
-  animation-delay: 1s, 1.5s;
+  animation: shimmerEntrance 1s ease-out, fadeOut 1s ease-in-out forwards;
+  animation-delay: 1s, 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -834,37 +834,13 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   }
 }
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.galeria img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.galeria img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
-
-
 /* === Microanimaciones modernas === */
-.button-apple, .btn-whatsapp, .call-button, .btn-cta {
+ .btn-whatsapp, .call-button, .btn-cta {
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   transform: translateZ(0);
   will-change: transform, box-shadow;
 }
 
-.button-apple:hover,
 .btn-whatsapp:hover,
 .call-button:hover,
 .btn-cta:hover {
@@ -872,7 +848,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.button-apple:active,
 .btn-whatsapp:active,
 .call-button:active,
 .btn-cta:active {
