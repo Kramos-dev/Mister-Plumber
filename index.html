@@ -710,10 +710,9 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       }
     }
     
-   #logo-container {
+  #logo-container {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100vh;
   background: linear-gradient(135deg, #ffffff, #00cfff, #0051ff, #001f8b);
@@ -726,23 +725,25 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   overflow: hidden;
   filter: drop-shadow(0 0 25px #00f7ff);
   transition: filter 0.5s ease;
-  text-align: center; /* Centrado extra para móviles */
-  padding: 0 20px;     /* Padding para que no se corte en pantallas pequeñas */
+  text-align: center;
+  padding: 0 20px;
   box-sizing: border-box;
+  pointer-events: auto; /* permite interacción mientras está visible */
 }
-
 
 /* BURBUJAS animadas */
 #logo-container::before {
   content: "";
   position: absolute;
+  top: 0; left: 0;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 3px, transparent 4px),
-              radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 3px);
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.15) 3px, transparent 4px),
+    radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 3px);
   background-size: 60px 60px;
   animation: floatBubbles 60s linear infinite;
-  pointer-events: none;
+  pointer-events: none; /* no bloquea interacción */
   z-index: 1;
   opacity: 0.5;
 }
@@ -756,9 +757,22 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
   background-size: 200% 200%;
   animation: shimmerGlow 6s ease-in-out infinite;
-  pointer-events: none;
+  pointer-events: none; /* no bloquea interacción */
   z-index: 2;
   opacity: 0.4;
+}
+
+/* LOGO - Animación */
+#logo-intro {
+  width: 60vw;
+  max-width: 200px;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  filter: blur(10px);
+  animation: showLogo 1.5s ease forwards;
+  z-index: 10; /* por encima de los pseudo-elementos */
+  pointer-events: none; /* para que no bloquee clicks */
 }
 
 /* ANIMACIONES */
@@ -787,6 +801,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   to {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none; /* bloquear interacción tras desaparecer */
   }
 }
 
@@ -808,17 +823,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   }
 }
 
-
-#logo-intro {
-  width: 60vw;  
-  max-width: 200px;   
-  height: auto;
-  opacity: 0;
-  transform: scale(0.8);
-  filter: blur(10px);
-  animation: showLogo 1.5s ease forwards;
-}
-
 @keyframes showLogo {
   to {
     opacity: 1;
@@ -827,12 +831,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   }
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 
 /* === Microanimaciones modernas === */
  .btn-whatsapp, .call-button, .btn-cta {
