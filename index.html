@@ -529,25 +529,26 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   0% { transform: translate(0, 0); }
   100% { transform: translate(80px, -80px); }
 }    
-    
-
-/* Video */
+    /* Video */
 .video-card video {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
+.video-card {
+  overflow: visible; /* Para evitar que los controles del video se corten */
+}
+
 .video-card figcaption {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   margin-top: 0.5rem;
   color: #ffffff;
   text-align: center;
   line-height: 1.4;
 }
-  
 
-/* Responsividad adicional si lo deseas */
+/* Responsividad */
 @media (max-width: 480px) {
   .card {
     padding: 1.5rem;
@@ -557,8 +558,10 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     max-height: 200px;
   }
 
+  .video-card figcaption {
+    font-size: 0.85rem;
+  }
 }
-
 
    
    /* Contact Section Form */
@@ -1023,8 +1026,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
   <video autoplay muted loop id="video-background" playsinline>
-    <source src="fontanero-detecta-fuga.mp4" type="video/mp4" />
-    Tu navegador no soporta el video de fondo.
+    <source src="" type="video/mp4" />
   </video>
 
   <header class="header-site" role="banner" data-aos="fade-down">
