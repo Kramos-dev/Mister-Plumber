@@ -22,8 +22,8 @@
 
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KVCSR772');</script>
     <script type="application/ld+json">
       {
@@ -94,8 +94,11 @@
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
@@ -142,71 +145,17 @@
             background: rgba(11, 34, 69, 0.7);
             z-index: -1;
         }
-        
-        /* === VIDEO CAROUSEL SECTION === */
-        .video-carousel {
+
+        #video-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            overflow: hidden;
-            z-index: -2;
-            background-color: #0b2245; /* Color de fallback */
-        }
-        
-        .video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease-in-out;
-        }
-        
-        .video-container.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .video-carousel video {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
-            filter: brightness(0.8) saturate(1.2);
+            filter: brightness(100%) saturate(1.2);
+            z-index: -2;
         }
-        
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.4);
-            color: white;
-            border: none;
-            font-size: 2.5rem;
-            cursor: pointer;
-            z-index: 10;
-            padding: 10px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            user-select: none;
-        }
-        
-        .nav-button:hover {
-            background: rgba(0, 0, 0, 0.6);
-            transform: translateY(-50%) scale(1.1);
-        }
-        
-        .prev-button {
-            left: 20px;
-        }
-        
-        .next-button {
-            right: 20px;
-        }
-
 
         /* HEADER CON GRADIENTE ANIMADO + BRILLO SUAVE + PARTICULAS */
         .header-site {
@@ -968,21 +917,9 @@
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVCSR772"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <div class="video-carousel">
-        <div class="video-container active">
-            <video autoplay muted loop playsinline>
-                <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="video-container">
-            <video muted loop playsinline>
-                <source src="url-del-segundo-video.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <button class="nav-button prev-button" aria-label="Video anterior"><i class="fas fa-chevron-left"></i></button>
-        <button class="nav-button next-button" aria-label="Siguiente video"><i class="fas fa-chevron-right"></i></button>
-    </div>
+    <video autoplay muted loop id="video-background" playsinline>
+        <source src="Fontanero_Repara_Fuga_de_Agua.mp4" type="video/mp4" />
+    </video>
 
     <header class="header-site" role="banner" data-aos="fade-down">
         <img src="Fontanero-urgente-logo.png" alt="Logo Fontanero Mister Plumber" class="header-logo" data-aos="zoom-in" data-aos-delay="100" />
@@ -1061,85 +998,172 @@
             </article>
 
             <article class="card" tabindex="0" data-aos="zoom-in" data-aos-delay="300">
-                <h4>🛠️🧑‍🔧 Fontanería General</h4>
-                <p>Reparaciones e instalaciones de tuberías, grifos, inodoros y más. Usamos tecnología avanzada para soluciones duraderas.</p>
+                <h4>🔧 Fontanería General en Costa Rica – Servicio Profesional 24/7</h4>
+                <p>Instalamos, reparamos y damos mantenimiento a todo tipo de sistemas de tuberías, baños, cocinas y redes de agua. Contamos con fontaneros expertos y herramientas especializadas para garantizar trabajos duraderos y seguros. Atención inmediata en hogares, negocios y proyectos residenciales en toda Costa Rica. ¡Confía en profesionales y evita problemas futuros!</p>
                 <figure class="video-card" data-aos="fade-up">
-                    <video controls poster="fontanero-instalacion.jpeg" title="Servicios de fontanería general - Mister Plumber Costa Rica">
-                        <source src="Fontanero-general.mp4" type="video/mp4" />
+                    <video controls poster="Fontaneria-poster3.jpg" title="Servicios de fontanería general - Mister Plumber Costa Rica">
+                        <source src="Destaqueos-fontanero-fugas.mp4" type="video/mp4" />
                     </video>
                     <figcaption>
-                        Servicios profesionales de fontanería en San José.
+                        Conoce nuestros servicios integrales de fontanería: instalaciones, sanitarios, mantenimiento y más.
                     </figcaption>
                 </figure>
             </article>
+
+        </div>
+    </section>
+        
+    <section id="testimonios" class="testimonials-section">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide testimonial-card">
+                    <p>“Detectaron una fuga Terrible. ¡Gracias don Gerardo!”</p>
+                    <div class="stars">★★★★★</div>
+                    <span>— Godofredo., Belén</span>
+                </div>
+
+                <div class="swiper-slide testimonial-card">
+                    <p>“Servicio de alta calidad y amabilidad. Puntuales y confiables.”</p>
+                    <div class="stars">★★★★★</div>
+                    <span>— Eladio G., San José</span>
+                </div>
+
+                <div class="swiper-slide testimonial-card">
+                    <p>“Un equipo serio, responsable y rápido. Los recomiendo totalmente.”</p>
+                    <div class="stars">★★★★★</div>
+                    <span>— María P., Curridabat</span>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
 
-    <div class="section" id="contacto" data-aos="fade-up">
-        <h3>Contáctenos Ahora</h3>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--gray-light);">
-            No dejes que una fuga te quite el sueño. Llámanos o escríbenos para una inspección. Estamos aquí para ayudarte.
-        </p>
+    <section class="section" id="contacto" aria-label="Contacto">
+        <h3 data-aos="fade-up">Contacto Mister Plumber</h3>
+        <form action="https://formspree.io/f/xqaleyal" method="POST" novalidate data-aos="fade-up" data-aos-delay="200" >
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
 
-        <form action="https://formspree.io/f/xbjnqpkp" method="POST">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required />
+            <label for="telefono">Teléfono </label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+506 8888 8888" autocomplete="tel" pattern="[\d\s+()-]{7,15}" />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required autocomplete="email" />
 
-            <label for="phone">Teléfono:</label>
-            <input type="tel" id="phone" name="phone" required />
-
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Enviar Mensaje</button>
+            <button type="submit" aria-label="Enviar formulario de contacto">Enviar</button>
         </form>
-    </div>
 
+        <div class="llamada-urgente" data-aos="fade-up">
+            <a href="tel:+50672390602" class="btn-urgente" aria-label="Llamar a Mister Plumber ahora">
+                📞 Llamada Urgente: +506 72390602
+            </a>
+        </div> 
+    </section>
+        
     <footer>
-        &copy; 2024 Mister Plumber Costa Rica. Todos los derechos reservados.
+        &copy; 2025 Mister Plumber Costa Rica | 
+        <a href="mailto:contacto@misterplumbercr.com" aria-label="Correo electrónico de Mister Plumber">contacto@misterplumbercr.com</a>
     </footer>
-
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoContainers = document.querySelectorAll('.video-container');
-            const prevButton = document.querySelector('.prev-button');
-            const nextButton = document.querySelector('.next-button');
-
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                // Oculta todos los videos
-                videoContainers.forEach(container => {
-                    container.classList.remove('active');
-                    container.querySelector('video').pause();
-                });
-
-                // Muestra el video actual y lo reproduce
-                const currentVideoContainer = videoContainers[currentIndex];
-                currentVideoContainer.classList.add('active');
-                currentVideoContainer.querySelector('video').play();
-            }
-
-            prevButton.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + videoContainers.length) % videoContainers.length;
-                updateCarousel();
-            });
-
-            nextButton.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % videoContainers.length;
-                updateCarousel();
-            });
-
-            // Inicia el carrusel
-            updateCarousel();
+        AOS.init({
+            duration: 1000, 
+            once: true,
         });
     </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // === Lógica para el splash screen y audio ===
+            const logo = document.getElementById("logo-container");
+            if (logo) {
+                logo.addEventListener("animationend", (e) => {
+                    if (e.animationName === "fadeOut") {
+                        logo.remove();
+                    }
+                });
+            }
+
+            const aguaSonido = document.getElementById("aguaSonido");
+            let yaSono = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !yaSono) {
+                        if (aguaSonido) {
+                            aguaSonido.volume = 0.2;
+                            aguaSonido.play().catch(() => {});
+                            yaSono = true;
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            const header = document.querySelector(".header-site");
+            if (header) {
+                observer.observe(header);
+            }
+
+            // === Inicialización de AOS ===
+            AOS.init({
+                duration: 1000,
+                once: true,
+            });
+
+            // === Reproducción de sonido de click ===
+            const clickSound = document.getElementById("clickSound");
+            if (clickSound) {
+                document.querySelectorAll('a, button, .btn-whatsapp, .call-button').forEach(el => {
+                    el.addEventListener('click', () => {
+                        if (!el.classList.contains('whatsapp-button')) {
+                            clickSound.currentTime = 0;
+                            clickSound.play().catch(() => {});
+                        }
+                    });
+                });
+            }
+
+            // === Inicialización de Swiper ===
+            const swiper = new Swiper('.mySwiper', {
+                loop: true,
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                grabCursor: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+        });
+    </script>
+    <audio id="clickSound" src="click-ui-suave-mister-plumber.mp3" preload="auto"></audio>
+    <audio id="aguaSonido" preload="auto">
+        <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_c260560c67.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>
+
+
+
